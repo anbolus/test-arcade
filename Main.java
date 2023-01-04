@@ -24,10 +24,7 @@ public class Main {
          * camion.getCamion();
          * });
          */
-
-        Timer timer = new Timer();
-        TimerTask task = new TimerTask() {
-            public void run() {
+           
 
                 for (int i = 1; i <= 5; i++) {
                     if (Camions.capacite == 0) {
@@ -38,8 +35,14 @@ public class Main {
                         System.out.println(Camions.capacite);
                     }
                     for (int k = 0; k <= 10; k++) {
-                        Camions.capacite += 5;
-                        System.out.println(Camions.capacite);
+                        
+                        try {
+                            Thread.sleep(50);
+                            Camions.capacite += 5;
+                            System.out.println(Camions.capacite);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
 
                         if (Camions.capacite == 50) {
                             Camions.capacite = 0;
@@ -47,13 +50,10 @@ public class Main {
                             goChrono();
                             break;
                         }
-                        timer.cancel();
                     }
                 }
             }
-        };
-        timer.schedule(task, 50, 50);
-    }
+    
 
     static long chrono = 0;
 
