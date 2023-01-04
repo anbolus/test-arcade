@@ -18,41 +18,41 @@ public class Main {
 
         }
 
-        /* Pour afficher les 30 camions
+        /*
+         * Pour afficher les 30 camions
          * camions.forEach(camion -> {
          * camion.getCamion();
          * });
          */
 
-        
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             public void run() {
-                
-                int size = 5;
-    
-                for (int i = 1; i <= size; i++) {
+
+                for (int i = 1; i <= 5; i++) {
                     if (Camions.capacite == 0) {
                         System.out.println("Camion n°" + i + " est dans la carrière");
+                        System.out.println("Camion n°" + i + " est en train de se remplir...");
                     }
                     for (int j = Camions.capacite; j <= Camions.capacite; j += 5) {
-                        System.out.println("Camion n°" + i + " est en train de se remplir...");
                         System.out.println(Camions.capacite);
                     }
-                    
-                    for (i = 1; i <= 10; i++) {
+                    for (int k = 0; k <= 10; k++) {
                         Camions.capacite += 5;
                         System.out.println(Camions.capacite);
-                        
+
                         if (Camions.capacite == 50) {
-                            System.out.println("le camion est chargé et va repartir");
-                            timer.cancel();
+                            Camions.capacite = 0;
+                            System.out.println("le camion n° " + i + " est chargé et va repartir");
+                            goChrono();
+                            break;
                         }
+                        timer.cancel();
                     }
                 }
             }
         };
-        timer.schedule(task, 500, 500);
+        timer.schedule(task, 50, 50);
     }
 
     static long chrono = 0;
