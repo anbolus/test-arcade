@@ -1,14 +1,12 @@
 public class Camions {
-    public int num;
-    public int temps;
+    public static int num;
+    public static long temps;
     public static int capacite;
-    public int chargement;
 
-    public Camions(int num, int temps, int capacite, int chargement) {
+    public Camions(int num, int temps, int capacite) {
         this.num = num;
         this.temps = temps;
         Camions.capacite = capacite;
-        this.chargement = chargement;
     }
 
     
