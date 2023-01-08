@@ -2,12 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Main extends JFrame {
-    final JFrame frame = new JFrame();
-    ArrayList<Camions> camions = new ArrayList<>();
+public class Main {
+    static ArrayList<Camions> camions = new ArrayList<>();
     
-    JPanel contentPane = (JPanel) this.getContentPane();
-        contentPane.setLayout(new FlowLayout());
     public static void main(String[] args) {
 
 
