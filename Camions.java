@@ -4,8 +4,8 @@ public class Camions {
     public static int capacite;
 
     public Camions(int num, int temps, int capacite) {
-        this.num = num;
-        this.temps = temps;
+        Camions.num = num;
+        Camions.temps = temps;
         Camions.capacite = capacite;
     }
 
@@ -13,8 +13,5 @@ public class Camions {
     public void getCamion() {
         System.out.println("Camion n°" + num + " attnd une place dans la carrière");
     }
-
-    /* Camions [ ] camionsList;
-    Camions[ ] arr = new Camions[1]; */
 
 }
